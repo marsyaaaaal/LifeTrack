@@ -1,11 +1,19 @@
+import { useEffect, useState } from "react";
 import NavBar from "./components/navbar"
+import Loading from "./components/loading";
+
 
 
 function App() {
-
+  const [clicked, setClicked] = useState(true);
+  
   return (
     <div>
-      <NavBar/>
+        {clicked ? (
+          <Loading result={() => setClicked(false)} />
+        ) : (
+          <NavBar/>
+        )}
     </div>
   )
 }
