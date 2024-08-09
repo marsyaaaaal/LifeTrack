@@ -1,21 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Loading from "./components/loading";
-import NoPage from "./pages/nopage";
-import LogIn from "./components/login_form";
-import Sign from "./components/sign_form";
-import Home from "./components/home";
+import { RouterProvider } from "react-router-dom";
+import NavBar from "./components/navbar";
+import router from "./routes/routes";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
+      <NavBar />
+      <RouterProvider router={router} />
+
+      {/* <BrowserRouter>
+        <Routes>  
           <Route index element={<Loading />} />
           <Route path="login" element={<Home />} />
           <Route path="signup" element={<Sign />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
