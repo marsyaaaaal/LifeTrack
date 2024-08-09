@@ -13,7 +13,7 @@ function Loading() {
           />
           <button
             className="flex flex-col items-center justify-center w-full bg-[#0D0B33] hover:bg-[#52489F] rounded-lg h-8 md:h-16"
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/login")}
           >
             <span className="text-[#E7C8E7] font-display text-sm md:text-2xl">
               Track Your Life!

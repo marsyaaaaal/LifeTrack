@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Loading from "../components/loading";
-import NoPage from "../pages/nopage";
 import LogIn from "../components/login_form";
 import Sign from "../components/sign_form";
 import Home from "../pages/home";
+import NoPage from "../pages/nopage";
 
 export default createBrowserRouter([
   {
@@ -13,7 +13,7 @@ export default createBrowserRouter([
   },
   {
     path: "/home",
-    element: <LogIn />,
+    element: <Home />,
     errorElement: <NoPage />,
   },
   {

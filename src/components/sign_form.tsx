@@ -4,8 +4,8 @@ function Sign() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="bg-gray-50 ">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <section className="bg-gray-50  ">
+        <div className="h-screen flex items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-[#E7C8E7]">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-[#0D0B33] md:text-2xl">
@@ -37,7 +37,7 @@ function Sign() {
                   />
                 </div>
                 <button
-                  type="submit"
+                  onClick={() => navigate("/home")}
                   className="w-full text-white bg-[#0D0B33] hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#0D0B33] dark:hover:bg-[#52489F] dark:focus:ring-primary-800"
                 >
                   Sign Up
