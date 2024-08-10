@@ -46,7 +46,7 @@ export default function Example() {
             <div className="flex flex-shrink-0 items-center">
               <img
                 alt="LifeTrack"
-                src="../public/icons/logo.svg"
+                src="../public/icons/navLogo.svg"
                 className="h-8 w-auto"
               />
             </div>

@@ -1,23 +1,39 @@
-import { MantineProvider } from "@mantine/core";
-import Calenda from "../components/calendar";
+import { MantineProvider, Modal } from "@mantine/core";
+import TabsCalGraph from "../components/tabs";
+import { useDisclosure } from "@mantine/hooks";
 
 function Home() {
+  const [opened, { open, close }] = useDisclosure(false);
   return (
     <>
-      <div className="h-screen flex items-center justify-center ">
-        <div className="grid grid-cols-1 gap-5">
-          <div className="shadow-2xl">
-            <MantineProvider>
-              <Calenda />
-            </MantineProvider>
+      <MantineProvider>
+        <div className="h-screen flex items-center justify-center ">
+          <div className="grid grid-cols-1 gap-5">
+            <div className="flex flex-col items-center justify-center w-full shadow-2xl ">
+              <TabsCalGraph orientation="horizontal" />
+            </div>
+            <button
+              onClick={open}
+              className="flex flex-col items-center justify-center w-full bg-[#0D0B33] hover:bg-[#52489F] rounded-lg h-8 md:h-10"
+            >
+              <span className="text-[#E7C8E7] font-display text-sm md:text-md">
+                Let's Track!
+              </span>
+            </button>
+            <Modal
+              opened={opened}
+              onClose={close}
+              centered
+              overlayProps={{
+                backgroundOpacity: 0.55,
+                blur: 2,
+              }}
+            >
+              <TabsCalGraph orientation="vertical" />
+            </Modal>
           </div>
-          <button className="flex flex-col items-center justify-center w-full bg-[#0D0B33] hover:bg-[#52489F] rounded-lg h-8 md:h-10">
-            <span className="text-[#E7C8E7] font-display text-sm md:text-md">
-              Let's Track!
-            </span>
-          </button>
         </div>
-      </div>
+      </MantineProvider>
     </>
   );
 }
