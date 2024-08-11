@@ -5,7 +5,7 @@ import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import "@mantine/charts/styles.css";
 
-function TabsCalGraph({ orientation }: any) {
+function TabsCalGraph({ orientation, selectedDate, setSelectedDate }: any) {
   return (
     <Tabs
       orientation={orientation}
@@ -14,7 +14,14 @@ function TabsCalGraph({ orientation }: any) {
       defaultValue={orientation === "horizontal" ? "calendar" : "diet"}
       className="w-full h-full"
     >
-      {orientation === "horizontal" ? <HomeTabs /> : <ModalTabs />}
+      {orientation === "horizontal" ? (
+        <HomeTabs
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
+      ) : (
+        <ModalTabs />
+      )}
     </Tabs>
   );
 }

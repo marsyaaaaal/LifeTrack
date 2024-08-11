@@ -1,16 +1,22 @@
 import { MantineProvider, Modal } from "@mantine/core";
 import TabsCalGraph from "../components/tabs";
 import { useDisclosure } from "@mantine/hooks";
+import { useState } from "react";
 
 function Home() {
   const [opened, { open, close }] = useDisclosure(false);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   return (
     <>
       <MantineProvider>
         <div className="h-screen flex items-center justify-center ">
           <div className="grid grid-cols-1 gap-5">
             <div className="flex flex-col items-center justify-center w-full shadow-2xl ">
-              <TabsCalGraph orientation="horizontal" />
+              <TabsCalGraph
+                orientation="horizontal"
+                selectedDate={selectedDate}
+                setSelectedDate={setSelectedDate}
+              />
             </div>
             <button
               onClick={open}
@@ -28,6 +34,7 @@ function Home() {
                 backgroundOpacity: 0.55,
                 blur: 2,
               }}
+              title={selectedDate != null ? selectedDate.toDateString() : ""}
             >
               <TabsCalGraph orientation="vertical" />
             </Modal>

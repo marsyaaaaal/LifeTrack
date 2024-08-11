@@ -4,8 +4,9 @@ import { data } from "../data/data";
 import Calenda from "../components/calendar";
 import { Tabs, rem } from "@mantine/core";
 
-function HomeTabs() {
+function HomeTabs({ selectedDate, setSelectedDate }: any) {
   const iconStyle = { width: rem(12), height: rem(12) };
+
   return (
     <>
       <Tabs.List>
@@ -21,7 +22,10 @@ function HomeTabs() {
       </Tabs.List>
 
       <Tabs.Panel value="calendar">
-        <Calenda />
+        <Calenda
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
       </Tabs.Panel>
 
       <Tabs.Panel value="graph">

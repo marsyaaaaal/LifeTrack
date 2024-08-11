@@ -1,7 +1,8 @@
 import { IconBowlSpoonFilled, IconRun, IconMoon } from "@tabler/icons-react";
 import { Tabs, rem } from "@mantine/core";
 
-function ModalTabs() {
+function ModalTabs({ selectedDate, setSelectedDate }: any) {
+  console.log("modal tabs " + selectedDate);
   const iconStyle = { width: rem(12), height: rem(12) };
   return (
     <>

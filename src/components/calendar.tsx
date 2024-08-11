@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { DatePicker } from "@mantine/dates";
 
-function Calenda() {
-  const [value, setValue] = useState<Date | null>(new Date());
-  return <DatePicker allowDeselect value={value} onChange={setValue} />;
+function Calenda({ selectedDate, setSelectedDate }: any) {
+  console.log("in calenda " + selectedDate);
+  return (
+    <DatePicker allowDeselect value={selectedDate} onChange={setSelectedDate} />
+  );
 }
 
 export default Calenda;
